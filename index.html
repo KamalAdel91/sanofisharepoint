@@ -2,33 +2,39 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>Responsive Card</title>
   <style>
-    .custom-box {
-      background-color: #e0e0e0;
-      border-radius: 12px;
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .card {
+      max-width: 600px;
+      margin: auto;
       padding: 20px;
+      background: #f2f2f2;
+      border-radius: 10px;
       font-family: Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      max-width: 500px;
       line-height: 1.6;
     }
-    .title {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
   </style>
+  <script>
+    // يرسل ارتفاع الصفحة لداخل iframe
+    window.onload = () => {
+      const height = document.body.scrollHeight;
+      window.parent.postMessage({ height }, '*');
+    };
+  </script>
 </head>
 <body>
-  <div class="custom-box">
-    <div class="title">⬛ Why It Matters</div>
-    <div>
+  <div class="card">
+    <h4>📌 Why It Matters</h4>
+    <p>
       80% of customer engagement relies on content—so it must be relevant, timely, and channel-optimized.<br>
       Leveraging existing global content can save up to 70% of production time.<br>
       Tagging content enables real-time monitoring of impact, ROI, and adoption across markets.<br>
       Adoption of the CLH (Content Localization Hub) helps drive consistent HCP messaging across brands and countries.
-    </div>
+    </p>
   </div>
 </body>
 </html>
-
